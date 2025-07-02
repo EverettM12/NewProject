@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://bvshv3b2j67or"]
+
+[ext_resource type="Material" uid="uid://c3fmfh8tbq4lv" path="res://Shaders/water.tres" id="1_abwcx"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_5pma1"]
+size = Vector2(300, 300)
+
+[sub_resource type="BoxMesh" id="BoxMesh_o656y"]
+size = Vector3(320, 0.2, 320)
+subdivide_width = 300
+subdivide_depth = 300
+
+[sub_resource type="FogMaterial" id="FogMaterial_6uhr0"]
+density = 0.2
+albedo = Color(0.0215691, 0.571161, 0.871674, 1)
+height_falloff = 100.0
+edge_fade = 0.0517
+
+[node name="Water" type="MeshInstance3D"]
+mesh = SubResource("PlaneMesh_5pma1")
+surface_material_override/0 = ExtResource("1_abwcx")
+
+[node name="WaterSurface" type="MeshInstance3D" parent="."]
+mesh = SubResource("BoxMesh_o656y")
+surface_material_override/0 = ExtResource("1_abwcx")
+
+[node name="FogVolume" type="FogVolume" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.832703, 0.142015, -0.829834)
+shape = 4
+material = SubResource("FogMaterial_6uhr0")
