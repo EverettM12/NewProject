@@ -1,0 +1,66 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhqhpwv80gmhw"]
+
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="1_8e4sb"]
+[ext_resource type="Script" uid="uid://dkbd11jdbsycn" path="res://Assets/DisplayTextAsset/Scripts/display_text.gd" id="1_wjrnn"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjrnn"]
+content_margin_left = 87.0
+content_margin_bottom = 35.0
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_npwor"]
+content_margin_left = 48.0
+content_margin_bottom = 10.0
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+corner_detail = 20
+
+[node name="DisplayText" type="Control" node_paths=PackedStringArray("label", "sub_label")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_wjrnn")
+label = NodePath("Label")
+sub_label = NodePath("Label2")
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -99.0
+offset_right = 286.0
+grow_vertical = 0
+theme = ExtResource("1_8e4sb")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxFlat_wjrnn")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -43.0
+offset_right = 332.0
+grow_vertical = 0
+theme = ExtResource("1_8e4sb")
+theme_override_colors/font_color = Color(0.74558, 0.74558, 0.74558, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_npwor")
+vertical_alignment = 2

@@ -1,0 +1,129 @@
+[gd_scene load_steps=8 format=3 uid="uid://6l85fkgviyy3"]
+
+[ext_resource type="Script" uid="uid://c3lxc4e4qqbvr" path="res://Assets/ChestAsset/Scripts/ChestScript.gd" id="1_fay3q"]
+[ext_resource type="PackedScene" uid="uid://c8q1y1b8xs80u" path="res://Player/Health/Scenes/heart_Ui.tscn" id="2_0tiek"]
+[ext_resource type="Resource" uid="uid://rhiefoolwvvs" path="res://Assets/ItemAsset/Resources/Items.tres" id="2_yhxn7"]
+[ext_resource type="FontFile" uid="uid://bk3j022f76ycq" path="res://Fonts/The Wild Breath of Zelda.otf" id="5_brnr5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r0ysr"]
+albedo_color = Color(0, 0.74902, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_buqdq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0tiek"]
+bg_color = Color(0.136826, 0.136826, 0.136826, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0.137255, 0.137255, 0.137255, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[node name="ChestScene" type="Area3D" node_paths=PackedStringArray("chest_prompt", "chest_menu", "title", "desc", "texture", "heart_holder")]
+script = ExtResource("1_fay3q")
+resource = ExtResource("2_yhxn7")
+chest_prompt = NodePath("Chest_Open_UI")
+chest_menu = NodePath("PanelContainer")
+title = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Title")
+desc = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/Desc")
+texture = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/TextureRect")
+heart_scene = ExtResource("2_0tiek")
+heart_holder = NodePath("PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/AspectRatioContainer/HBoxContainer")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0)
+use_collision = true
+material = SubResource("StandardMaterial3D_r0ysr")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+shape = SubResource("BoxShape3D_buqdq")
+debug_color = Color(1, 0.6, 0.701961, 0.419608)
+
+[node name="Chest_Open_UI" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Label" type="Label" parent="Chest_Open_UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "(E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -83.0
+offset_right = 262.0
+offset_bottom = 83.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0tiek")
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Title" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_fonts/font = ExtResource("5_brnr5")
+theme_override_font_sizes/font_size = 30
+
+[node name="HSeparator" type="HSeparator" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+ratio = 45.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer/AspectRatioContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Desc" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("5_brnr5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

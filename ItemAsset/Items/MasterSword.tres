@@ -1,0 +1,27 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=5 format=3 uid="uid://dqyw3q0c3yytf"]
+
+[ext_resource type="Script" uid="uid://bamt5q6hcra14" path="res://Assets/ItemAsset/Scripts/InventoryItem.gd" id="1_h4akk"]
+[ext_resource type="Texture2D" uid="uid://dprexd88cw8no" path="res://Assets/ItemAsset/Items/Textures/PlaceHolder.png" id="2_7a2b7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pemxx"]
+albedo_color = Color(0.857435, 0.598851, 3.85046e-07, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_h4akk"]
+
+[resource]
+script = ExtResource("1_h4akk")
+item_type = 2
+name = "Master Sword"
+description = "The Sword that seals the Darkness"
+texture = ExtResource("2_7a2b7")
+can_pick_up = true
+hearts_given = 10
+amount = 1
+max_stack = 1
+mesh = SubResource("CapsuleMesh_h4akk")
+in_game_texture = SubResource("StandardMaterial3D_pemxx")
+collision_shape_size_area3d_body = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_color_area3d_body = Color(0, 0, 0, 1)
+collision_shape_size_rigid_body = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_color_rigid_body = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://bamt5q6hcra14"

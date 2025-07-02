@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://ddg6y317so5fb"]
+
+[ext_resource type="Script" uid="uid://csiijihjtwumv" path="res://Assets/MasterSwordAsset/Scripts/master_sword_pedastel.gd" id="1_vi3ae"]
+[ext_resource type="Resource" uid="uid://dqyw3q0c3yytf" path="res://Assets/ItemAsset/Items/MasterSword.tres" id="2_0mitg"]
+[ext_resource type="PackedScene" uid="uid://c2qv28hwth7mc" path="res://Assets/ItemAsset/Scenes/ItemScene.tscn" id="2_ou5tt"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0mitg"]
+radius = 3.0
+
+[node name="MasterSwordPedastel" type="Node3D" node_paths=PackedStringArray("Sword_Display")]
+script = ExtResource("1_vi3ae")
+Master_Sword = ExtResource("2_0mitg")
+Sword_Display = NodePath("Item")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -0.253906, 0)
+size = Vector3(2, 0.492188, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -0.0812988, 0)
+size = Vector3(1, 0.837402, 1)
+
+[node name="Item" parent="." instance=ExtResource("2_ou5tt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.691901, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_0mitg")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

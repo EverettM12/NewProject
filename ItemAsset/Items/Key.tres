@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=8 format=3 uid="uid://2b2pqs76crvu"]
+
+[ext_resource type="Script" uid="uid://bamt5q6hcra14" path="res://Assets/ItemAsset/Scripts/InventoryItem.gd" id="1_g8xkx"]
+[ext_resource type="Texture2D" uid="uid://ca408dm1c5imy" path="res://Player/Stamina/Textures/circle.png" id="2_g8xkx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_g8xkx"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_l5avc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xk8dy"]
+albedo_color = Color(1, 1, 0, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_dbjhr"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_bew4s"]
+
+[resource]
+script = ExtResource("1_g8xkx")
+item_type = 3
+name = "KEY"
+description = "A SMALL KEY FOR A DOOR."
+texture = ExtResource("2_g8xkx")
+can_pick_up = true
+hearts_given = 0
+amount = 1
+max_stack = 1
+mesh = SubResource("PrismMesh_dbjhr")
+in_game_texture = SubResource("StandardMaterial3D_xk8dy")
+rigid_body_physics_material = SubResource("PhysicsMaterial_bew4s")
+collision_shape_area3d_body = SubResource("SphereShape3D_g8xkx")
+collision_shape_size_area3d_body = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_color_area3d_body = Color(1, 0, 0, 1)
+collision_shape_rigid_body = SubResource("SphereShape3D_l5avc")
+collision_shape_size_rigid_body = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+collision_color_rigid_body = Color(0, 0, 1, 1)
+metadata/_custom_type_script = "uid://bamt5q6hcra14"

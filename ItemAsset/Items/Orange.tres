@@ -1,0 +1,37 @@
+[gd_resource type="Resource" script_class="InventoryItem" load_steps=8 format=3 uid="uid://bc8pwjkvvddik"]
+
+[ext_resource type="Script" uid="uid://bamt5q6hcra14" path="res://Assets/ItemAsset/Scripts/InventoryItem.gd" id="1_bdoay"]
+[ext_resource type="Texture2D" uid="uid://bd1qn887cgik3" path="res://Assets/ItemAsset/Items/Textures/orange.png" id="2_4bma7"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_bdoay"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_4bma7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bdoay"]
+albedo_color = Color(1, 0.498039, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_4bma7"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0w4w4"]
+friction = 10.0
+bounce = 10.0
+
+[resource]
+script = ExtResource("1_bdoay")
+item_type = 1
+name = "ORANGE"
+description = "AN ORANGE FRUIT!"
+texture = ExtResource("2_4bma7")
+can_pick_up = true
+hearts_given = 2
+amount = 1
+max_stack = 10
+mesh = SubResource("SphereMesh_4bma7")
+in_game_texture = SubResource("StandardMaterial3D_bdoay")
+rigid_body_physics_material = SubResource("PhysicsMaterial_0w4w4")
+collision_shape_area3d_body = SubResource("SphereShape3D_bdoay")
+collision_shape_size_area3d_body = Transform3D(1.1, 0, 0, 0, 1.1, 0, 0, 0, 1.1, 0, 0, 0)
+collision_color_area3d_body = Color(1, 0.964706, 0, 1)
+collision_shape_rigid_body = SubResource("SphereShape3D_4bma7")
+collision_shape_size_rigid_body = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+collision_color_rigid_body = Color(0, 0, 1, 1)

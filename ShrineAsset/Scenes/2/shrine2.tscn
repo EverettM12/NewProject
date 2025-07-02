@@ -1,0 +1,486 @@
+[gd_scene load_steps=19 format=3 uid="uid://qorojjr83vnv"]
+
+[ext_resource type="Script" uid="uid://cptcw5ucei1tm" path="res://Assets/ShrineAsset/Scripts/2/shrine2.gd" id="1_jqjhx"]
+[ext_resource type="PackedScene" uid="uid://bhqhpwv80gmhw" path="res://Assets/DisplayTextAsset/Scenes/display_text.tscn" id="2_jxuc1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vq47q"]
+albedo_color = Color(0, 0.176471, 0.207843, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n6iag"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_n6iag"]
+height = 1.35254
+radius = 1.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nrv8a"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_2m6qu"]
+height = 0.395752
+radius = 1.35205
+
+[sub_resource type="Animation" id="Animation_rk4a3"]
+resource_name = "Closed"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.0957, 3.08688, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00156331, 2.47798, 0.538033)]
+}
+
+[sub_resource type="Animation" id="Animation_tcwfc"]
+resource_name = "Enter_Shrine"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Platform:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.5, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1, -0.646565), Vector3(0, -6, -0.646565)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"ready_player_for_shrine"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_vq47q"]
+resource_name = "Open"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.001, 3.08688, 0.680176)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-2.12558, 2.47798, 0.209059)]
+}
+
+[sub_resource type="Animation" id="Animation_tmawe"]
+resource_name = "Open_Door"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CSGBox3D:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.0957, 3.08688, 1), Vector3(0.001, 3.08688, 0.680176)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.00156331, 2.47798, 0.538033), Vector3(-2.12558, 2.47798, 0.209059)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Pedestal")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_shrine_has_opened"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_42h6v"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/path = NodePath("CSGBox3D:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(4.0957, 3.08688, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = false
+tracks/1/path = NodePath("CSGBox3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0.00156331, 2.47798, 0.538033)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Platform:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, -0.646565)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Camera3D:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.23356, 0.696492)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_42h6v"]
+_data = {
+&"Closed": SubResource("Animation_rk4a3"),
+&"Enter_Shrine": SubResource("Animation_tcwfc"),
+&"Open": SubResource("Animation_vq47q"),
+&"Open_Door": SubResource("Animation_tmawe"),
+&"RESET": SubResource("Animation_42h6v")
+}
+
+[sub_resource type="Animation" id="Animation_2ilkn"]
+resource_name = "Move Camera"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1.23356, 0.696492), Vector3(0, 3, 5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_05vxw"]
+resource_name = "Move Camera Back"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_klciq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1.23356, 0.696492)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_05vxw"]
+_data = {
+&"Move Camera": SubResource("Animation_2ilkn"),
+&"Move Camera Back": SubResource("Animation_05vxw"),
+&"RESET": SubResource("Animation_klciq")
+}
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_di87a"]
+
+[node name="Shrine2" type="Node3D" node_paths=PackedStringArray("pedestal", "moving_platform", "camera", "DisplayText", "door_anim", "cam_anim", "pedestal_ui", "platform_ui")]
+script = ExtResource("1_jqjhx")
+pedestal = NodePath("Pedestal")
+moving_platform = NodePath("Platform")
+camera = NodePath("Camera3D")
+DisplayText = NodePath("DisplayText")
+door_anim = NodePath("AnimationPlayer")
+cam_anim = NodePath("AnimationPlayer2")
+pedestal_ui = NodePath("Pedestal/PedestalInteract")
+platform_ui = NodePath("Platform/PlatformInteract")
+shrine_id = 2
+shrine_name = "Shrine2"
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.5)
+size = Vector3(6, 1, 7)
+material = SubResource("StandardMaterial3D_vq47q")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, -2.5)
+size = Vector3(4, 4, 1)
+material = SubResource("StandardMaterial3D_vq47q")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.5, -1)
+size = Vector3(4, 1, 4)
+material = SubResource("StandardMaterial3D_vq47q")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5, 3, -1)
+size = Vector3(1, 4, 4)
+material = SubResource("StandardMaterial3D_vq47q")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5, 3, -1)
+size = Vector3(1, 4, 4)
+material = SubResource("StandardMaterial3D_vq47q")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="CSGCombiner3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.179657, -0.646565)
+operation = 2
+radius = 1.0
+height = 1.79584
+sides = 64
+
+[node name="Pedestal" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.89543, 2, 2.05884)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pedestal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.328369, 0)
+use_collision = true
+height = 1.34326
+sides = 64
+material = SubResource("StandardMaterial3D_n6iag")
+
+[node name="PedestalInteract" type="Control" parent="Pedestal"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Pedestal/PedestalInteract"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Pedestal/PedestalInteract/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Pedestal/PedestalInteract/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Interact"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Pedestal/PedestalInteract/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "(E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Pedestal"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.32373, 0)
+shape = SubResource("CylinderShape3D_n6iag")
+
+[node name="Platform" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -0.646565)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Platform"]
+use_collision = true
+radius = 1.0
+height = 0.155151
+sides = 64
+material = SubResource("StandardMaterial3D_nrv8a")
+
+[node name="PlatformInteract" type="Control" parent="Platform"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Platform/PlatformInteract"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Platform/PlatformInteract/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Platform/PlatformInteract/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "Enter Shrine"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Platform/PlatformInteract/CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "(E)"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Platform"]
+shape = SubResource("CylinderShape3D_2m6qu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_42h6v")
+}
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00156331, 2.47798, 0.538033)
+use_collision = true
+size = Vector3(4.0957, 3.08688, 1)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.23356, 0.696492)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0788768, 2.20072, -0.931225)
+light_color = Color(0, 1, 1, 1)
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_05vxw")
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.001, 0, 0, 0, 0.001, 0, 0, 0, 0.001, 0, 1, 2.28437)
+visible = false
+
+[node name="DisplayText" parent="." instance=ExtResource("2_jxuc1")]
+
+[node name="ShrineDiscovered" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ShrineDiscovered"]
+transform = Transform3D(20, 0, 0, 0, 20, 0, 0, 0, 20, 0, 2.23051, 0)
+shape = SubResource("BoxShape3D_di87a")
+
+[node name="RespawnPoint" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 3)
+visible = false
+
+[connection signal="body_entered" from="Pedestal" to="." method="_on_body_entered_pedestal"]
+[connection signal="body_exited" from="Pedestal" to="." method="_on_body_exited_pedestal"]
+[connection signal="body_entered" from="Platform" to="." method="_on_body_entered_platform"]
+[connection signal="body_exited" from="Platform" to="." method="_on_body_exited_platform"]
+[connection signal="body_entered" from="ShrineDiscovered" to="." method="_on_shrine_discovered"]

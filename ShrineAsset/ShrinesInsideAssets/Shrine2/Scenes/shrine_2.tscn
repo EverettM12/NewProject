@@ -1,0 +1,106 @@
+[gd_scene load_steps=9 format=3 uid="uid://drn84rjm47kn5"]
+
+[ext_resource type="Script" uid="uid://baykge55j8isb" path="res://Assets/ShrineAsset/ShrinesInsideAssets/Shrine2/Scripts/shrine_2.gd" id="1_tm316"]
+[ext_resource type="Material" uid="uid://jsgqge4jl1ik" path="res://TestingGrounds/Materials/TestTexture.tres" id="2_ha0wl"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rke87"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8jym4"]
+albedo_color = Color(1, 0, 1, 1)
+
+[sub_resource type="Animation" id="Animation_8sggv"]
+resource_name = "Fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mv6gu"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_pm6km"]
+resource_name = "UnFade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pm6km"]
+_data = {
+&"Fade": SubResource("Animation_8sggv"),
+&"RESET": SubResource("Animation_mv6gu"),
+&"UnFade": SubResource("Animation_pm6km")
+}
+
+[node name="Shrine_2" type="Node3D"]
+script = ExtResource("1_tm316")
+
+[node name="CSGCombiner3D" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGCombiner3D"]
+use_collision = true
+size = Vector3(30, 1, 30)
+material = ExtResource("2_ha0wl")
+
+[node name="Area3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.552, 1, 8.43678)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1.23, 0, 0, 0, 1.23, 0, 0, 0, 1.23, 0, 0, 0)
+shape = SubResource("BoxShape3D_rke87")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Area3D"]
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.244, 0.262884, 0)
+radius = 1.0
+height = 0.550781
+sides = 64
+material = SubResource("StandardMaterial3D_8jym4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_pm6km")
+}
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

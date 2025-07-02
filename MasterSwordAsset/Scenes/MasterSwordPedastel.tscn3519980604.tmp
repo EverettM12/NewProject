@@ -1,0 +1,56 @@
+[gd_scene load_steps=9 format=3 uid="uid://ddg6y317so5fb"]
+
+[ext_resource type="Script" uid="uid://csiijihjtwumv" path="res://Assets/MasterSwordAsset/Scripts/master_sword_pedastel.gd" id="1_vi3ae"]
+[ext_resource type="Script" uid="uid://bamt5q6hcra14" path="res://Assets/ItemAsset/Scripts/InventoryItem.gd" id="2_0mitg"]
+[ext_resource type="PackedScene" uid="uid://c2qv28hwth7mc" path="res://Assets/ItemAsset/Scenes/ItemScene.tscn" id="2_ou5tt"]
+[ext_resource type="Texture2D" uid="uid://dprexd88cw8no" path="res://Assets/ItemAsset/Items/Textures/PlaceHolder.png" id="3_lstk2"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_pemxx"]
+albedo_color = Color(0.857435, 0.598851, 3.85046e-07, 1)
+
+[sub_resource type="TextMesh" id="TextMesh_507so"]
+text = "T"
+
+[sub_resource type="Resource" id="Resource_gdv3o"]
+script = ExtResource("2_0mitg")
+item_type = 2
+name = "Master Sword"
+description = "The Sword that seals the Darkness"
+texture = ExtResource("3_lstk2")
+can_pick_up = true
+hearts_given = 10
+amount = 1
+max_stack = 1
+mesh = SubResource("TextMesh_507so")
+in_game_texture = SubResource("StandardMaterial3D_pemxx")
+collision_shape_size_area3d_body = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_color_area3d_body = Color(0, 0, 0, 1)
+collision_shape_size_rigid_body = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+collision_color_rigid_body = Color(0, 0, 0, 1)
+metadata/_custom_type_script = "uid://bamt5q6hcra14"
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_0mitg"]
+radius = 3.0
+
+[node name="MasterSwordPedastel" type="Node3D" node_paths=PackedStringArray("Sword_Display")]
+script = ExtResource("1_vi3ae")
+Master_Sword = SubResource("Resource_gdv3o")
+Sword_Display = NodePath("Item")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -0.253906, 0)
+size = Vector3(2, 0.492188, 2)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, -0.0812988, 0)
+size = Vector3(1, 0.837402, 1)
+
+[node name="Item" parent="." instance=ExtResource("2_ou5tt")]
+transform = Transform3D(10, 0, 0, 0, 10, 0, 0, 0, 10, 0, 0.691901, 0)
+
+[node name="Area3D" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_0mitg")
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]

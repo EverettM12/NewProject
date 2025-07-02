@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://w2kd4j0f7gv2"]
+
+[ext_resource type="Script" uid="uid://b7koeapu3qx1g" path="res://Assets/ParagliderAsset/Scripts/paraglider_scene.gd" id="1_fdxwr"]
+
+[node name="ParagliderScene" type="Node3D"]
+script = ExtResource("1_fdxwr")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)

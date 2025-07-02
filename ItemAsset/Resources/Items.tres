@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Items" load_steps=7 format=3 uid="uid://rhiefoolwvvs"]
+
+[ext_resource type="Script" uid="uid://bamt5q6hcra14" path="res://Assets/ItemAsset/Scripts/InventoryItem.gd" id="1_u1rm4"]
+[ext_resource type="Resource" uid="uid://d02q4o0ghet87" path="res://Assets/ItemAsset/Items/Apple.tres" id="2_nit4j"]
+[ext_resource type="Resource" uid="uid://b0gmaeq7jwfj7" path="res://Assets/ItemAsset/Items/Grape.tres" id="3_utyus"]
+[ext_resource type="Resource" uid="uid://bc8pwjkvvddik" path="res://Assets/ItemAsset/Items/Orange.tres" id="4_e6lu5"]
+[ext_resource type="Resource" uid="uid://2b2pqs76crvu" path="res://Assets/ItemAsset/Items/Key.tres" id="5_nit4j"]
+[ext_resource type="Script" uid="uid://c3pjaw4yqpw3j" path="res://Assets/ItemAsset/Scripts/Items.gd" id="5_wna4d"]
+
+[resource]
+script = ExtResource("5_wna4d")
+random_items_for_the_chest = Array[ExtResource("1_u1rm4")]([ExtResource("2_nit4j"), ExtResource("3_utyus"), ExtResource("4_e6lu5")])
+items = Array[ExtResource("1_u1rm4")]([ExtResource("2_nit4j"), ExtResource("3_utyus"), ExtResource("4_e6lu5"), ExtResource("5_nit4j")])
+metadata/_custom_type_script = "uid://c3pjaw4yqpw3j"
