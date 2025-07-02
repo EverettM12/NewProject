@@ -1,0 +1,42 @@
+[gd_resource type="Resource" script_class="Inventory" load_steps=10 format=3 uid="uid://btio3fxtxv051"]
+
+[ext_resource type="Script" uid="uid://bamt5q6hcra14" path="res://Assets/ItemAsset/Scripts/InventoryItem.gd" id="1_axta0"]
+[ext_resource type="Script" uid="uid://b8m3ro0v7uiwe" path="res://Player/Inventory/Scripts/Container/Inventory.gd" id="2_0wvet"]
+[ext_resource type="Texture2D" uid="uid://bp6emkjkdr3eh" path="res://Assets/ItemAsset/Items/Textures/apple.png" id="2_ok5na"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_6g2m8"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_kb0ym"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_sgq80"]
+albedo_color = Color(1, 0, 0, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_7swdx"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_3dsvu"]
+friction = 0.5
+
+[sub_resource type="Resource" id="Resource_ok5na"]
+script = ExtResource("1_axta0")
+item_type = 1
+name = "APPLE"
+description = "A YUMMY RED FRUIT!"
+texture = ExtResource("2_ok5na")
+can_pick_up = true
+hearts_given = 1
+amount = 1
+max_stack = 20
+mesh = SubResource("SphereMesh_7swdx")
+in_game_texture = SubResource("StandardMaterial3D_sgq80")
+rigid_body_physics_material = SubResource("PhysicsMaterial_3dsvu")
+collision_shape_area3d_body = SubResource("SphereShape3D_6g2m8")
+collision_shape_size_area3d_body = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+collision_color_area3d_body = Color(0, 0.6, 0.701961, 0.419608)
+collision_shape_rigid_body = SubResource("SphereShape3D_kb0ym")
+collision_shape_size_rigid_body = Transform3D(1.01, 0, 0, 0, 1.01, 0, 0, 0, 1.01, 0, 0, 0)
+collision_color_rigid_body = Color(1, 0, 0, 1)
+
+[resource]
+script = ExtResource("2_0wvet")
+items = Array[ExtResource("1_axta0")]([null, null, SubResource("Resource_ok5na"), null, null, null, null, null, null, null, null, null, null, null, null, null, null, null])
+metadata/_custom_type_script = "uid://b8m3ro0v7uiwe"

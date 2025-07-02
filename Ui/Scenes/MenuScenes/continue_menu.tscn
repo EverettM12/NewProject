@@ -1,0 +1,81 @@
+[gd_scene load_steps=3 format=3 uid="uid://csr76vpnivc2b"]
+
+[ext_resource type="Script" uid="uid://d3326a624l53e" path="res://Ui/Scripts/MenuScripts/continue_menu.gd" id="1_fsayg"]
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="2_r8a8s"]
+
+[node name="Continue_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_fsayg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 50
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_r8a8s")
+theme_override_font_sizes/font_size = 50
+text = "CONTINUE MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/VBoxContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ContinueSave" type="Button" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_r8a8s")
+text = "CONTINUE FROM LAST SAVE"
+
+[node name="TextureRect" type="TextureRect" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+expand_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="ContinueSaveAuto" type="Button" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("2_r8a8s")
+text = "CONTINUE FROM LAST AUTO SAVE"
+
+[node name="TextureRect2" type="TextureRect" parent="Panel/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer2"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 50)
+layout_mode = 2
+expand_mode = 2
+
+[connection signal="pressed" from="Panel/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer/ContinueSave" to="." method="_on_continue_save_pressed"]
+[connection signal="pressed" from="Panel/VBoxContainer/CenterContainer/VBoxContainer/HBoxContainer2/ContinueSaveAuto" to="." method="_on_continue_save_auto_pressed"]

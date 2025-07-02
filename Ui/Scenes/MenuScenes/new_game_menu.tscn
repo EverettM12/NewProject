@@ -1,0 +1,48 @@
+[gd_scene load_steps=3 format=3 uid="uid://do7nkv1m614e6"]
+
+[ext_resource type="Script" uid="uid://ci08n5ucaj68a" path="res://Ui/Scripts/MenuScripts/newG_menu.gd" id="1_go6x2"]
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="2_7j3s8"]
+
+[node name="newG_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_go6x2")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/CenterContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_7j3s8")
+text = "NEW GAME MENU"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NewSave" type="Button" parent="Panel/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_7j3s8")
+text = "CREATE A NEW SAVE ( DELETES CURRENT SAVE )"
+
+[connection signal="pressed" from="Panel/CenterContainer/VBoxContainer/NewSave" to="." method="_on_new_save_pressed"]

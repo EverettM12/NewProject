@@ -1,0 +1,233 @@
+[gd_scene load_steps=23 format=3 uid="uid://mpwbi766gj8o"]
+
+[ext_resource type="Script" uid="uid://dm8kh7k1og0xh" path="res://Scripts/Test Scene Scripts/TestSceneGameStart.gd" id="1_tb23d"]
+[ext_resource type="Shader" uid="uid://bynehyh1mrvkp" path="res://Shaders/CelShader.gdshader" id="2_ep748"]
+[ext_resource type="Material" uid="uid://cqsm7fok3boar" path="res://Textures/Materials/TestTexture.tres" id="2_tb23d"]
+[ext_resource type="PackedScene" uid="uid://cnsaa58goiw7s" path="res://Scenes/Player Scenes/PlayerScene.tscn" id="3_d1j55"]
+[ext_resource type="Texture2D" uid="uid://dy3axqriremrj" path="res://Textures/Gradients/Gradient.png" id="4_apr86"]
+[ext_resource type="PackedScene" uid="uid://6l85fkgviyy3" path="res://Scenes/Asset Scenes/Chest/chest_scene.tscn" id="4_d1eq2"]
+[ext_resource type="PackedScene" uid="uid://bfml8h1j5s16p" path="res://Scenes/Inventory Scenes/InventoryManager.tscn" id="5_ep748"]
+[ext_resource type="PackedScene" uid="uid://duhdfolveluoi" path="res://Scenes/Test Scenes/box_of_pain.tscn" id="8_jcemv"]
+[ext_resource type="PackedScene" uid="uid://dfuhhg5lin6hg" path="res://Scenes/Test Scenes/out_of_the_world_border.tscn" id="9_teb4r"]
+[ext_resource type="PackedScene" uid="uid://bricyp0ykvwf2" path="res://Scenes/Test Scenes/delete_save_data.tscn" id="10_53o87"]
+[ext_resource type="PackedScene" uid="uid://cytcpwvitoa5f" path="res://Scenes/Test Scenes/levelup_hearts.tscn" id="11_g66gr"]
+[ext_resource type="PackedScene" uid="uid://v3bb44ue4qrn" path="res://Scenes/Test Scenes/heal_player.tscn" id="12_35qvv"]
+[ext_resource type="PackedScene" uid="uid://bddnicideyahf" path="res://Scenes/UI_Scenes/main_menu_scene.tscn" id="13_ao151"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g66gr"]
+render_priority = 0
+shader = ExtResource("2_ep748")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(0.647059, 0.560784, 0.615686, 1)
+shader_parameter/color_gradient = ExtResource("4_apr86")
+shader_parameter/fresnel_gradient = ExtResource("4_apr86")
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_apr86"]
+friction = 0.44
+bounce = 0.37
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_apr86"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_jcemv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jcemv"]
+render_priority = 0
+shader = ExtResource("2_ep748")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(0, 0.356863, 0, 1)
+shader_parameter/color_gradient = ExtResource("4_apr86")
+shader_parameter/fresnel_gradient = ExtResource("4_apr86")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apr86"]
+render_priority = 0
+shader = ExtResource("2_ep748")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(1, 0.227451, 0.521569, 1)
+shader_parameter/color_gradient = ExtResource("4_apr86")
+shader_parameter/fresnel_gradient = ExtResource("4_apr86")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_teb4r"]
+render_priority = 0
+shader = ExtResource("2_ep748")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(0.172549, 0.47451, 0.215686, 1)
+shader_parameter/color_gradient = ExtResource("4_apr86")
+shader_parameter/fresnel_gradient = ExtResource("4_apr86")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_apr86"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53o87"]
+render_priority = 0
+shader = ExtResource("2_ep748")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(1, 0.341176, 0.309804, 1)
+shader_parameter/color_gradient = ExtResource("4_apr86")
+shader_parameter/fresnel_gradient = ExtResource("4_apr86")
+
+[node name="Test Scene" type="Node3D" node_paths=PackedStringArray("player", "inventory_manager", "delete_save", "main_menu")]
+script = ExtResource("1_tb23d")
+player = NodePath("Player")
+inventory_manager = NodePath("inventorymanager")
+delete_save = NodePath("Delete_save_data")
+main_menu = NodePath("MainMenuScene")
+
+[node name="Map" type="CSGCombiner3D" parent="."]
+use_collision = true
+
+[node name="Floor" type="CSGBox3D" parent="Map" groups=["Ignore MiniMap Collision"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.268555, 0, 0)
+use_collision = true
+size = Vector3(20, 1, 20)
+material = SubResource("ShaderMaterial_g66gr")
+
+[node name="Walll" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.748467, 3, -9.5)
+size = Vector3(19, 5, 1)
+material = ExtResource("2_tb23d")
+
+[node name="Walll2" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.25153, 3, -0.5)
+size = Vector3(1, 5, 17)
+material = ExtResource("2_tb23d")
+
+[node name="Walll3" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.74847, 3, 0)
+size = Vector3(1, 5, 18)
+material = ExtResource("2_tb23d")
+
+[node name="Walll4" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.248467, 5.5, 8.5)
+size = Vector3(18, 10, 1)
+material = ExtResource("2_tb23d")
+
+[node name="Platform" type="CSGBox3D" parent="Map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.5, 6, 6.5)
+size = Vector3(6, 1, 3)
+material = ExtResource("2_tb23d")
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.61455, 1, 1.26389)
+mass = 0.002
+physics_material_override = SubResource("PhysicsMaterial_apr86")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_apr86")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="RigidBody3D"]
+mesh = SubResource("SphereMesh_jcemv")
+material = SubResource("ShaderMaterial_jcemv")
+
+[node name="Player" parent="." instance=ExtResource("3_d1j55")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="inventorymanager" parent="." node_paths=PackedStringArray("player") instance=ExtResource("5_ep748")]
+unique_name_in_owner = true
+player = NodePath("../Player")
+
+[node name="Box of pain" parent="." node_paths=PackedStringArray("player") instance=ExtResource("8_jcemv")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 1.24966, -7)
+player = NodePath("../Player")
+
+[node name="Display" type="Node" parent="."]
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Display"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.16242, 2.41777, 3.47441)
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Display"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53825, 2.41777, -3.88353)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="Display"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.14985, 2.41777, 0.0582378)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Display"]
+transform = Transform3D(0.790615, 0.368124, 0.489298, -0.612314, 0.475319, 0.631778, 0, -0.799098, 0.601202, -0.731781, 0.998956, 5.52967)
+material = SubResource("ShaderMaterial_apr86")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Display"]
+transform = Transform3D(0.501118, -0.59984, 0.623757, 0.767434, 0.641128, 0, -0.399908, 0.478692, 0.781618, -2.23192, 1.85789, 3.95003)
+material = SubResource("ShaderMaterial_teb4r")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="Display"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.45545, 2.25251, 4.45764)
+mesh = SubResource("CapsuleMesh_apr86")
+material = SubResource("ShaderMaterial_53o87")
+
+[node name="Out of the World Border" parent="." instance=ExtResource("9_teb4r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.73918, 0)
+
+[node name="Delete_save_data" parent="." node_paths=PackedStringArray("player") instance=ExtResource("10_53o87")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.73349, 3.55265, -6.34454)
+player = NodePath("../Player")
+
+[node name="Area3D" parent="." instance=ExtResource("11_g66gr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.08958, 1.43795, -5.43914)
+
+[node name="heal_player" parent="." instance=ExtResource("12_35qvv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8308, 0.999359, -1.32204)
+
+[node name="ChestScene" parent="." instance=ExtResource("4_d1eq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.18839, 1, -5.13219)
+
+[node name="ChestScene2" parent="." instance=ExtResource("4_d1eq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.98742, 1, -6.94211)
+
+[node name="ChestScene3" parent="." instance=ExtResource("4_d1eq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.55595, 1, -4.40645)
+
+[node name="ChestScene4" parent="." instance=ExtResource("4_d1eq2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.44379, 1, -3.86191)
+
+[node name="MainMenuScene" parent="." instance=ExtResource("13_ao151")]
+visible = false
+
+[connection signal="Player_Died" from="Player" to="." method="_on_player_player_died"]
+[connection signal="player_ready" from="Player" to="." method="_on_player_player_ready"]
+[connection signal="ClearInventory" from="Delete_save_data" to="inventorymanager" method="_on_delete_save_data_clear_inventory"]
+[connection signal="ClearMaxHealth" from="Delete_save_data" to="Player" method="_on_delete_save_data_clear_max_health"]
+[connection signal="CreateNewGame" from="MainMenuScene" to="." method="CreateNewGame"]
+[connection signal="StartGame" from="MainMenuScene" to="." method="StartGame"]

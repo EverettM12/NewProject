@@ -1,0 +1,2006 @@
+[gd_scene load_steps=111 format=3 uid="uid://bfml8h1j5s16p"]
+
+[ext_resource type="Script" uid="uid://c4yb0g1xhxw63" path="res://Player/Inventory/Scripts/Inventory/InventoryScript.gd" id="1_dray1"]
+[ext_resource type="Script" uid="uid://fn552lfqi4o0" path="res://Player/Inventory/Scripts/Container/InventoryContainer.gd" id="2_rpp3v"]
+[ext_resource type="Resource" uid="uid://rhiefoolwvvs" path="res://Assets/ItemAsset/Resources/Items.tres" id="3_bh2ri"]
+[ext_resource type="PackedScene" uid="uid://d2inajmo8ahsj" path="res://Player/Inventory/Scenes/InventorySlot.tscn" id="4_oxa5n"]
+[ext_resource type="Script" uid="uid://qyxte55fctcd" path="res://Player/Inventory/Scripts/Slot/InventorySlot.gd" id="5_srm2t"]
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="6_srm2t"]
+[ext_resource type="Resource" uid="uid://ciwdm286p3pe" path="res://Player/Inventory/InventoryResources/Inventory2.tres" id="7_44rfq"]
+[ext_resource type="PackedScene" uid="uid://c7ccwa0d6py0r" path="res://Player/Health/Scenes/heart.tscn" id="8_h0adf"]
+[ext_resource type="Shader" uid="uid://wo30xrpx70v0" path="res://Player/Health/Shaders/heartshader.gdshader" id="9_6fiwf"]
+[ext_resource type="Texture2D" uid="uid://dxu6ui77sdrdh" path="res://Player/Inventory/Textures/InventoryPage.svg" id="9_ay6ep"]
+[ext_resource type="Texture2D" uid="uid://lj4svb6vjnyn" path="res://Player/Inventory/Textures/InventoryPage2.svg" id="9_bh2ri"]
+[ext_resource type="Texture2D" uid="uid://bis10a1cxnr2e" path="res://Player/Inventory/Textures/InventorySelector.svg" id="13_6g2m8"]
+[ext_resource type="PackedScene" uid="uid://tnot18irhjro" path="res://Player/Inventory/Scenes/quest.tscn" id="15_sgq80"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h0adf"]
+content_margin_left = 50.0
+bg_color = Color(0, 0, 0, 0.670588)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6g2m8"]
+light_mode = 2
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6g2m8"]
+bg_color = Color(0, 0, 0, 0.14902)
+border_width_left = 2
+border_width_top = 2
+border_width_bottom = 2
+border_color = Color(0.122252, 0.122252, 0.122252, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_6g2m8"]
+color = Color(0.140447, 0.140447, 0.140447, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ay6ep"]
+bg_color = Color(0, 0, 0, 0.603922)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ay6ep"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bh2ri"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6g2m8"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kb0ym"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sgq80"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7swdx"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3dsvu"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmxo2"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cdh1e"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ix2jq"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dsxud"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d4bpi"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3wtkv"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kx57c"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ls6mv"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bayig"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6x7gx"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_al41r"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_s2to4"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6r78"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ka2lr"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7k5uo"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hx3mu"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_um4lj"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xeu7a"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5myid"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hp42u"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d2k2e"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aibsv"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2taxq"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_sgq80"]
+color = Color(1, 1, 1, 1)
+grow_begin = -27.0
+grow_end = -27.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sgq80"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gnhuc"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bogao"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rsa54"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8adn"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kfgys"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q6khh"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v02a4"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6jv5"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4xtv5"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gb64i"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v4id0"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_swqev"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0n0ui"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8hy6l"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wrydg"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ewovo"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ltw04"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xyoc8"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h6qft"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xis10"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wshfm"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_axtgf"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_evtw4"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y26ps"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0elhm"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6ss53"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fvo8b"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qmk8j"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8bslx"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tpc6d"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u1ms6"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ec1n0"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wb7ob"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ordrs"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_np64q"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i664a"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jabjd"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fkwan"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tv74v"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3k0s"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_08aae"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mtcrr"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wv8sn"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lawu5"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8apvf"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ynaqc"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tq4v0"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_su1dk"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i57gq"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_74lu0"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t35ni"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cltoi"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_12858"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkvuw"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whqd7"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_grebm"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_85wwv"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l4m6n"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_buk44"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_43thf"]
+resource_local_to_scene = true
+shader = ExtResource("9_6fiwf")
+shader_parameter/color = Color(1, 1, 1, 1)
+shader_parameter/progress = 0.0
+shader_parameter/alpha = 1.0
+
+[node name="InventoryManager" type="Control" node_paths=PackedStringArray("player_inventory", "player_inventory_container", "Name", "Desc", "Selector", "MoreOptions", "MoreOptionsBackGround", "quit_check", "quit_yes_label", "quit_no_label", "quest_container") groups=["Inventory"]]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dray1")
+player_inventory = NodePath("Inventory/Center/PlayerInventory")
+player_inventory_container = NodePath("Inventory")
+Name = NodePath("Inventory/Center/PanelContainer/MarginContainer/Panel/VBoxContainer/HSeparator/MarginContainer/Name")
+Desc = NodePath("Inventory/Center/PanelContainer/MarginContainer/Panel/MarginContainer/Description")
+Selector = NodePath("Inventory/Selector")
+MoreOptions = NodePath("Inventory/MoreOptions/VBoxContainer")
+MoreOptionsBackGround = NodePath("Inventory/MoreOptions")
+slots_per_row = 5
+quit_check = NodePath("QuitCheck")
+quit_yes_label = NodePath("QuitCheck/HBoxContainer/Yes")
+quit_no_label = NodePath("QuitCheck/HBoxContainer/No")
+quest_container = NodePath("Quests/PanelContainer/MarginContainer/QuestContainer")
+quest_scene = ExtResource("15_sgq80")
+
+[node name="Inventory" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Center" type="PanelContainer" parent="Inventory"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_h0adf")
+
+[node name="PlayerInventory" type="GridContainer" parent="Inventory/Center"]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 0
+theme_override_constants/h_separation = 5
+theme_override_constants/v_separation = 5
+columns = 5
+script = ExtResource("2_rpp3v")
+items = ExtResource("3_bh2ri")
+inventory = ExtResource("7_44rfq")
+slot_scene = ExtResource("4_oxa5n")
+slot_count = 20
+metadata/_custom_type_script = "uid://fn552lfqi4o0"
+
+[node name="Slot0_137501146724571" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot1_137501348055374" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot2_137501549383952" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot3_137501750702131" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot4_137501952035859" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot5_137502153358050" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot6_137502354689108" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot7_137502556019624" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot8_137502757346231" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot9_137502958672775" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot10_137503159999417" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot11_137503361325960" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot12_137503562651991" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot13_137503763974148" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot14_137503965302771" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot15_137504166632125" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot16_137504367949984" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot17_137504569274649" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot18_137504770591810" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="Slot19_137504971938754" type="TextureRect" parent="Inventory/Center/PlayerInventory" node_paths=PackedStringArray("amount_label") instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_srm2t")
+amount_label = NodePath("AmountLabel")
+
+[node name="PanelContainer" type="PanelContainer" parent="Inventory/Center"]
+material = SubResource("CanvasItemMaterial_6g2m8")
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Center/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 120
+
+[node name="Panel" type="Panel" parent="Inventory/Center/PanelContainer/MarginContainer"]
+custom_minimum_size = Vector2(500, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6g2m8")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Center/PanelContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_right = -8.0
+offset_bottom = -37.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HSeparator" type="HSeparator" parent="Inventory/Center/PanelContainer/MarginContainer/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_6g2m8")
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Center/PanelContainer/MarginContainer/Panel/VBoxContainer/HSeparator"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -55.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 25
+
+[node name="Name" type="Label" parent="Inventory/Center/PanelContainer/MarginContainer/Panel/VBoxContainer/HSeparator/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 20
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Center/PanelContainer/MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 5
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/Center/PanelContainer/MarginContainer/Panel/MarginContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Description" type="Label" parent="Inventory/Center/PanelContainer/MarginContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+
+[node name="Top" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay6ep")
+
+[node name="Left" type="MarginContainer" parent="Inventory/Top"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="Inventory/Top/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Top/Left/CenterContainer"]
+layout_mode = 2
+
+[node name="Row_1" type="MarginContainer" parent="Inventory/Top/Left/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="HeartContainer" type="VBoxContainer" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1"]
+layout_mode = 2
+
+[node name="Row 1" type="HBoxContainer" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Heart" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ay6ep")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart2" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_bh2ri")
+layout_mode = 2
+
+[node name="Heart3" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_6g2m8")
+layout_mode = 2
+
+[node name="Heart4" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_kb0ym")
+layout_mode = 2
+
+[node name="Heart5" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_sgq80")
+layout_mode = 2
+
+[node name="Heart6" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_7swdx")
+layout_mode = 2
+
+[node name="Heart7" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_3dsvu")
+layout_mode = 2
+
+[node name="Heart8" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_qmxo2")
+layout_mode = 2
+
+[node name="Heart9" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_cdh1e")
+layout_mode = 2
+
+[node name="Heart10" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ix2jq")
+layout_mode = 2
+
+[node name="Row 2" type="HBoxContainer" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Heart11" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_dsxud")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart12" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_d4bpi")
+layout_mode = 2
+
+[node name="Heart13" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_3wtkv")
+layout_mode = 2
+
+[node name="Heart14" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_kx57c")
+layout_mode = 2
+
+[node name="Heart15" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ls6mv")
+layout_mode = 2
+
+[node name="Heart16" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_bayig")
+layout_mode = 2
+
+[node name="Heart17" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_6x7gx")
+layout_mode = 2
+
+[node name="Heart18" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_al41r")
+layout_mode = 2
+
+[node name="Heart19" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_s2to4")
+layout_mode = 2
+
+[node name="Heart20" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_q6r78")
+layout_mode = 2
+
+[node name="Row 3" type="HBoxContainer" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="Heart21" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ka2lr")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart22" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_7k5uo")
+layout_mode = 2
+
+[node name="Heart23" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_hx3mu")
+layout_mode = 2
+
+[node name="Heart24" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_um4lj")
+layout_mode = 2
+
+[node name="Heart25" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_xeu7a")
+layout_mode = 2
+
+[node name="Heart26" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_5myid")
+layout_mode = 2
+
+[node name="Heart27" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_hp42u")
+layout_mode = 2
+
+[node name="Heart28" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_d2k2e")
+layout_mode = 2
+
+[node name="Heart29" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_aibsv")
+layout_mode = 2
+
+[node name="Heart30" parent="Inventory/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_2taxq")
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Inventory/Top"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Inventory/Top/Center"]
+layout_mode = 2
+
+[node name="Left" type="MarginContainer" parent="Inventory/Top/Center/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = -100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Top/Center/HBoxContainer2/Left"]
+layout_mode = 2
+alignment = 2
+
+[node name="Quests" type="Label" parent="Inventory/Top/Center/HBoxContainer2/Left/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+text = "QUESTS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Inventory/Top/Center/HBoxContainer2/Left/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Center" type="VBoxContainer" parent="Inventory/Top/Center/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Inventory" type="Label" parent="Inventory/Top/Center/HBoxContainer2/Center"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 36
+text = "INVENTORY"
+
+[node name="CenterContainer" type="CenterContainer" parent="Inventory/Top/Center/HBoxContainer2/Center"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/Top/Center/HBoxContainer2/Center/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect1" type="TextureRect" parent="Inventory/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_bh2ri")
+
+[node name="TextureRect2" type="TextureRect" parent="Inventory/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_ay6ep")
+
+[node name="TextureRect3" type="TextureRect" parent="Inventory/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_bh2ri")
+
+[node name="HSeparator" type="HSeparator" parent="Inventory/Top/Center/HBoxContainer2/Center"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Right" type="MarginContainer" parent="Inventory/Top/Center/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_right = -100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Top/Center/HBoxContainer2/Right"]
+layout_mode = 2
+alignment = 2
+
+[node name="Settings" type="Label" parent="Inventory/Top/Center/HBoxContainer2/Right/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+text = "SETTINGS"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Inventory/Top/Center/HBoxContainer2/Right/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Right" type="MarginContainer" parent="Inventory/Top"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="Inventory/Top/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Top/Right/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/Top/Right/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Inventory/Top/Right/CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Top/Right/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="Inventory/Top/Right/CenterContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="Bottom" type="PanelContainer" parent="Inventory"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -18.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay6ep")
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Bottom"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="Inventory/Bottom/MarginContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/Bottom/MarginContainer/CenterContainer"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Inventory/Bottom/MarginContainer/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 10
+
+[node name="Back" type="Label" parent="Inventory/Bottom/MarginContainer/CenterContainer/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 20
+text = "BACK (TAB)"
+
+[node name="Selector" type="TextureRect" parent="Inventory"]
+visible = false
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -526.0
+offset_top = -208.0
+offset_right = -426.0
+offset_bottom = -108.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("13_6g2m8")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="MoreOptions" type="Panel" parent="Inventory"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.482639
+anchor_top = 0.469136
+anchor_right = 0.587674
+anchor_bottom = 0.709877
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_sgq80")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Inventory/MoreOptions"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Inventory/MoreOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 20
+text = "EQUIP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Inventory/MoreOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 20
+text = "DROP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="Inventory/MoreOptions/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 20
+text = "BACK"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Quests" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PanelContainer" type="PanelContainer" parent="Quests"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Quests/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 50
+theme_override_constants/margin_top = 170
+theme_override_constants/margin_right = 750
+
+[node name="QuestContainer" type="VBoxContainer" parent="Quests/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Top" type="PanelContainer" parent="Quests"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay6ep")
+
+[node name="Left" type="MarginContainer" parent="Quests/Top"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="Quests/Top/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Quests/Top/Left/CenterContainer"]
+layout_mode = 2
+
+[node name="Row_1" type="MarginContainer" parent="Quests/Top/Left/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="HeartContainer" type="VBoxContainer" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1"]
+layout_mode = 2
+
+[node name="Row 1" type="HBoxContainer" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+layout_mode = 2
+
+[node name="Heart" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_gnhuc")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart2" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_bogao")
+layout_mode = 2
+
+[node name="Heart3" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_rsa54")
+layout_mode = 2
+
+[node name="Heart4" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_a8adn")
+layout_mode = 2
+
+[node name="Heart5" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_kfgys")
+layout_mode = 2
+
+[node name="Heart6" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_q6khh")
+layout_mode = 2
+
+[node name="Heart7" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_v02a4")
+layout_mode = 2
+
+[node name="Heart8" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_h6jv5")
+layout_mode = 2
+
+[node name="Heart9" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_4xtv5")
+layout_mode = 2
+
+[node name="Heart10" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_gb64i")
+layout_mode = 2
+
+[node name="Row 2" type="HBoxContainer" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+layout_mode = 2
+
+[node name="Heart11" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_v4id0")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart12" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_swqev")
+layout_mode = 2
+
+[node name="Heart13" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_0n0ui")
+layout_mode = 2
+
+[node name="Heart14" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_8hy6l")
+layout_mode = 2
+
+[node name="Heart15" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_wrydg")
+layout_mode = 2
+
+[node name="Heart16" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ewovo")
+layout_mode = 2
+
+[node name="Heart17" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ltw04")
+layout_mode = 2
+
+[node name="Heart18" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_xyoc8")
+layout_mode = 2
+
+[node name="Heart19" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_h6qft")
+layout_mode = 2
+
+[node name="Heart20" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_xis10")
+layout_mode = 2
+
+[node name="Row 3" type="HBoxContainer" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+layout_mode = 2
+
+[node name="Heart21" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_wshfm")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart22" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_axtgf")
+layout_mode = 2
+
+[node name="Heart23" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_evtw4")
+layout_mode = 2
+
+[node name="Heart24" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_y26ps")
+layout_mode = 2
+
+[node name="Heart25" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_0elhm")
+layout_mode = 2
+
+[node name="Heart26" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_6ss53")
+layout_mode = 2
+
+[node name="Heart27" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_fvo8b")
+layout_mode = 2
+
+[node name="Heart28" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_qmk8j")
+layout_mode = 2
+
+[node name="Heart29" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_8bslx")
+layout_mode = 2
+
+[node name="Heart30" parent="Quests/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_tpc6d")
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Quests/Top"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Quests/Top/Center"]
+layout_mode = 2
+
+[node name="Center" type="VBoxContainer" parent="Quests/Top/Center/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Quests" type="Label" parent="Quests/Top/Center/HBoxContainer2/Center"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 36
+text = "QUESTS"
+
+[node name="CenterContainer" type="CenterContainer" parent="Quests/Top/Center/HBoxContainer2/Center"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Quests/Top/Center/HBoxContainer2/Center/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect1" type="TextureRect" parent="Quests/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_bh2ri")
+
+[node name="TextureRect2" type="TextureRect" parent="Quests/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_ay6ep")
+
+[node name="TextureRect3" type="TextureRect" parent="Quests/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_bh2ri")
+
+[node name="HSeparator" type="HSeparator" parent="Quests/Top/Center/HBoxContainer2/Center"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Right" type="MarginContainer" parent="Quests/Top/Center/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_right = -100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Quests/Top/Center/HBoxContainer2/Right"]
+layout_mode = 2
+alignment = 2
+
+[node name="Settings" type="Label" parent="Quests/Top/Center/HBoxContainer2/Right/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+text = "INVENTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Quests/Top/Center/HBoxContainer2/Right/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Right" type="MarginContainer" parent="Quests/Top"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="Quests/Top/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Quests/Top/Right/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Quests/Top/Right/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Quests/Top/Right/CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Quests/Top/Right/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="Quests/Top/Right/CenterContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="Settings" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Top" type="PanelContainer" parent="Settings"]
+custom_minimum_size = Vector2(0, 70)
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 70.0
+grow_horizontal = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ay6ep")
+
+[node name="Left" type="MarginContainer" parent="Settings/Top"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings/Top/Left"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Top/Left/CenterContainer"]
+layout_mode = 2
+
+[node name="Row_1" type="MarginContainer" parent="Settings/Top/Left/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+metadata/_edit_use_anchors_ = true
+
+[node name="HeartContainer" type="VBoxContainer" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1"]
+layout_mode = 2
+
+[node name="Row 1" type="HBoxContainer" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+layout_mode = 2
+
+[node name="Heart" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_u1ms6")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart2" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ec1n0")
+layout_mode = 2
+
+[node name="Heart3" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_wb7ob")
+layout_mode = 2
+
+[node name="Heart4" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ordrs")
+layout_mode = 2
+
+[node name="Heart5" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_np64q")
+layout_mode = 2
+
+[node name="Heart6" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_i664a")
+layout_mode = 2
+
+[node name="Heart7" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_jabjd")
+layout_mode = 2
+
+[node name="Heart8" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_fkwan")
+layout_mode = 2
+
+[node name="Heart9" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_tv74v")
+layout_mode = 2
+
+[node name="Heart10" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 1" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_l3k0s")
+layout_mode = 2
+
+[node name="Row 2" type="HBoxContainer" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+layout_mode = 2
+
+[node name="Heart11" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_08aae")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart12" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_mtcrr")
+layout_mode = 2
+
+[node name="Heart13" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_wv8sn")
+layout_mode = 2
+
+[node name="Heart14" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_lawu5")
+layout_mode = 2
+
+[node name="Heart15" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_8apvf")
+layout_mode = 2
+
+[node name="Heart16" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_ynaqc")
+layout_mode = 2
+
+[node name="Heart17" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_tq4v0")
+layout_mode = 2
+
+[node name="Heart18" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_su1dk")
+layout_mode = 2
+
+[node name="Heart19" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_i57gq")
+layout_mode = 2
+
+[node name="Heart20" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 2" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_74lu0")
+layout_mode = 2
+
+[node name="Row 3" type="HBoxContainer" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer"]
+layout_mode = 2
+
+[node name="Heart21" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_t35ni")
+custom_minimum_size = Vector2(15, 15)
+layout_mode = 2
+
+[node name="Heart22" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_cltoi")
+layout_mode = 2
+
+[node name="Heart23" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_12858")
+layout_mode = 2
+
+[node name="Heart24" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_gkvuw")
+layout_mode = 2
+
+[node name="Heart25" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_whqd7")
+layout_mode = 2
+
+[node name="Heart26" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_grebm")
+layout_mode = 2
+
+[node name="Heart27" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_85wwv")
+layout_mode = 2
+
+[node name="Heart28" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_l4m6n")
+layout_mode = 2
+
+[node name="Heart29" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_buk44")
+layout_mode = 2
+
+[node name="Heart30" parent="Settings/Top/Left/CenterContainer/VBoxContainer/Row_1/HeartContainer/Row 3" instance=ExtResource("8_h0adf")]
+visible = false
+material = SubResource("ShaderMaterial_43thf")
+layout_mode = 2
+
+[node name="Center" type="CenterContainer" parent="Settings/Top"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Settings/Top/Center"]
+layout_mode = 2
+
+[node name="Left" type="MarginContainer" parent="Settings/Top/Center/HBoxContainer2"]
+layout_mode = 2
+theme_override_constants/margin_left = -100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Top/Center/HBoxContainer2/Left"]
+layout_mode = 2
+alignment = 2
+
+[node name="Inventory" type="Label" parent="Settings/Top/Center/HBoxContainer2/Left/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+text = "INVENTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Settings/Top/Center/HBoxContainer2/Left/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Center" type="VBoxContainer" parent="Settings/Top/Center/HBoxContainer2"]
+layout_mode = 2
+
+[node name="Settings" type="Label" parent="Settings/Top/Center/HBoxContainer2/Center"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 36
+text = "SETTINGS"
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings/Top/Center/HBoxContainer2/Center"]
+visible = false
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Top/Center/HBoxContainer2/Center/CenterContainer"]
+layout_mode = 2
+
+[node name="TextureRect1" type="TextureRect" parent="Settings/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_bh2ri")
+
+[node name="TextureRect2" type="TextureRect" parent="Settings/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_ay6ep")
+
+[node name="TextureRect3" type="TextureRect" parent="Settings/Top/Center/HBoxContainer2/Center/CenterContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("9_bh2ri")
+
+[node name="HSeparator" type="HSeparator" parent="Settings/Top/Center/HBoxContainer2/Center"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Right" type="MarginContainer" parent="Settings/Top/Center/HBoxContainer2"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_right = -100
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Top/Center/HBoxContainer2/Right"]
+layout_mode = 2
+alignment = 2
+
+[node name="Settings" type="Label" parent="Settings/Top/Center/HBoxContainer2/Right/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+text = "INVENTORY"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="Settings/Top/Center/HBoxContainer2/Right/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_sgq80")
+
+[node name="Right" type="MarginContainer" parent="Settings/Top"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="CenterContainer" type="CenterContainer" parent="Settings/Top/Right"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Settings/Top/Right/CenterContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Settings/Top/Right/CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Settings/Top/Right/CenterContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+expand_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Settings/Top/Right/CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_right = 20
+
+[node name="Label" type="Label" parent="Settings/Top/Right/CenterContainer/VBoxContainer/HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("6_srm2t")
+theme_override_font_sizes/font_size = 25
+text = "1"
+
+[node name="QuitCheck" type="Control" parent="."]
+visible = false
+layout_mode = 2
+anchors_preset = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_srm2t")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuitCheck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 429.0
+offset_right = -429.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 0
+
+[node name="Yes" type="Button" parent="QuitCheck/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "SAVE AND QUIT"
+
+[node name="No" type="Button" parent="QuitCheck/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "RETURN"
+
+[connection signal="pressed" from="QuitCheck/HBoxContainer/Yes" to="." method="_on_yes_pressed"]
+[connection signal="pressed" from="QuitCheck/HBoxContainer/No" to="." method="_on_no_pressed"]

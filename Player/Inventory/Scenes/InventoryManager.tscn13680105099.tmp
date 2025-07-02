@@ -1,0 +1,412 @@
+[gd_scene load_steps=10 format=3 uid="uid://bfml8h1j5s16p"]
+
+[ext_resource type="Script" uid="uid://c4yb0g1xhxw63" path="res://Scripts/Inventory Scripts/InventoryScript.gd" id="1_dray1"]
+[ext_resource type="Script" uid="uid://fn552lfqi4o0" path="res://Scripts/Inventory Scripts/InventoryContainer.gd" id="2_rpp3v"]
+[ext_resource type="Resource" uid="uid://cn3pa6fa3tctj" path="res://Inventory Resources/Inventory3.tres" id="3_44rfq"]
+[ext_resource type="PackedScene" uid="uid://d2inajmo8ahsj" path="res://Scenes/Inventory Scenes/InventorySlot.tscn" id="4_oxa5n"]
+[ext_resource type="Script" uid="uid://qyxte55fctcd" path="res://Scripts/Inventory Scripts/InventorySlot.gd" id="5_dray1"]
+[ext_resource type="Resource" uid="uid://cjkjmmxtlwja4" path="res://Inventory Resources/Inventory1.tres" id="5_q0ftu"]
+[ext_resource type="Script" uid="uid://d3sl1f2tgwc6y" path="res://Scripts/Inventory Scripts/quit_check.gd" id="7_25kpx"]
+[ext_resource type="Resource" uid="uid://d0n5ml5e6ev7u" path="res://Inventory Resources/Inventory2.tres" id="7_44rfq"]
+[ext_resource type="PackedScene" uid="uid://cropf7sr3sabs" path="res://Scenes/Inventory Scenes/Inventory_Info_Tag.tscn" id="10_cevj6"]
+
+[node name="ChestInventory" type="Control" node_paths=PackedStringArray("chest_inventory", "hot_bar", "player_inventory", "quit_check")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dray1")
+chest_inventory = NodePath("ChestInventory")
+hot_bar = NodePath("HotBar")
+player_inventory = NodePath("PlayerInventory")
+quit_check = NodePath("QuitCheck")
+
+[node name="ChestInventory" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -516.0
+offset_bottom = 308.0
+grow_horizontal = 0
+columns = 5
+script = ExtResource("2_rpp3v")
+inventory = ExtResource("3_44rfq")
+slot_scene = ExtResource("4_oxa5n")
+slot_count = 15
+metadata/_custom_type_script = "uid://fn552lfqi4o0"
+
+[node name="Slot0_83399440206133" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot1_83399641535295" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot2_83399842861215" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot3_83400044187697" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot4_83400245514388" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot5_83400446842114" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot6_83400648167046" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot7_83400849495300" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot8_83401050797638" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot9_83401252147118" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot10_83401453473705" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot11_83401654798590" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot12_83401856125187" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot13_83402057450872" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot14_83402258780109" type="TextureRect" parent="ChestInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="HotBar" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -518.0
+offset_top = -148.0
+offset_right = 518.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 0
+columns = 10
+script = ExtResource("2_rpp3v")
+inventory = ExtResource("7_44rfq")
+slot_scene = ExtResource("4_oxa5n")
+slot_count = 10
+metadata/_custom_type_script = "uid://fn552lfqi4o0"
+
+[node name="Slot0_82197570785706" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot1_82197738557877" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot2_82197906330300" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot3_82198074102434" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot4_82198241874584" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot5_82198409646735" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot6_82198577418855" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot7_82198745190821" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot8_82198912963190" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot9_82199080735333" type="TextureRect" parent="HotBar" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="PlayerInventory" type="GridContainer" parent="."]
+layout_mode = 0
+offset_right = 620.0
+offset_bottom = 412.0
+columns = 6
+script = ExtResource("2_rpp3v")
+inventory = ExtResource("5_q0ftu")
+slot_scene = ExtResource("4_oxa5n")
+slot_count = 18
+metadata/_custom_type_script = "uid://fn552lfqi4o0"
+
+[node name="Slot0_82199701492399" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot1_82199869263872" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot2_82200037036075" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot3_82200204808231" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot4_82200372580384" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot5_82200540353120" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot6_82200708125271" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot7_82200875897240" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot8_82201043669357" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot9_82201211441515" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot10_82201379213905" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot11_82201546986234" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot12_82201714758380" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot13_82201882530559" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot14_82202050302729" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot15_82202218074901" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot16_82202385847072" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="Slot17_82202553619225" type="TextureRect" parent="PlayerInventory" instance=ExtResource("4_oxa5n")]
+texture_filter = 1
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+stretch_mode = 3
+script = ExtResource("5_dray1")
+
+[node name="InventoryInfo" parent="." instance=ExtResource("10_cevj6")]
+
+[node name="QuitCheck" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_25kpx")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="QuitCheck"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 429.0
+offset_right = -429.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Yes" type="Button" parent="QuitCheck/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "Yes"
+
+[node name="No" type="Button" parent="QuitCheck/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+text = "No
+"
+
+[connection signal="Chest_Close" from="." to="ChestInventory" method="_on_chest_inventory_chest_close"]
+[connection signal="Chest_Open" from="." to="ChestInventory" method="_on_chest_inventory_chest_open"]
+[connection signal="pressed" from="QuitCheck/HBoxContainer/Yes" to="." method="_on_confirm_quit_pressed"]
+[connection signal="pressed" from="QuitCheck/HBoxContainer/No" to="." method="_on_cancel_quit_pressed"]

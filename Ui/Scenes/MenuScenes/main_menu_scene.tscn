@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://bddnicideyahf"]
+
+[ext_resource type="Script" uid="uid://cptua40q6rubm" path="res://Ui/Scripts/MenuScripts/MainMenu.gd" id="1_uh55s"]
+[ext_resource type="PackedScene" uid="uid://csr76vpnivc2b" path="res://Ui/Scenes/MenuScenes/continue_menu.tscn" id="2_eu0t7"]
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="2_gj7xl"]
+[ext_resource type="PackedScene" uid="uid://do7nkv1m614e6" path="res://Ui/Scenes/MenuScenes/new_game_menu.tscn" id="4_b1b3d"]
+[ext_resource type="PackedScene" uid="uid://di4acq6cuypld" path="res://TestingGrounds/Scenes/node_3d.tscn" id="4_bmxy5"]
+[ext_resource type="PackedScene" uid="uid://bn0xhnxgty3ou" path="res://Ui/Scenes/MenuScenes/settings_menu.tscn" id="6_ucbwp"]
+
+[node name="MainMenuScene" type="Control" node_paths=PackedStringArray("main_content", "continue_button", "new_game_button", "quit_button", "settings_button", "change_button", "continue_scene", "new_game_scene", "settings_scene")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_uh55s")
+main_content = NodePath("Main_Content")
+continue_button = NodePath("Main_Content/Button_Offset/Buttons/Continue")
+new_game_button = NodePath("Main_Content/Button_Offset/Buttons/New_Game")
+quit_button = NodePath("Main_Content/Button_Offset/Buttons/Quit")
+settings_button = NodePath("Main_Content/Button_Offset/Buttons/Settings")
+change_button = NodePath("Main_Content/Button_Offset/Buttons/ChangeMode")
+continue_scene = NodePath("Main_Content/Continue_Menu")
+new_game_scene = NodePath("Main_Content/newG_Menu")
+settings_scene = NodePath("Main_Content/settings_Menu")
+metadata/_edit_use_anchors_ = true
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Main_Content" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Offset" type="AspectRatioContainer" parent="Main_Content"]
+layout_mode = 2
+ratio = 1.7
+
+[node name="Buttons" type="VBoxContainer" parent="Main_Content/Button_Offset"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+
+[node name="Continue" type="Button" parent="Main_Content/Button_Offset/Buttons"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_gj7xl")
+text = "CONTINUE"
+
+[node name="New_Game" type="Button" parent="Main_Content/Button_Offset/Buttons"]
+layout_mode = 2
+size_flags_vertical = 0
+theme = ExtResource("2_gj7xl")
+text = "NEW GAME"
+
+[node name="Quit" type="Button" parent="Main_Content/Button_Offset/Buttons"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_gj7xl")
+text = "QUIT"
+
+[node name="Settings" type="Button" parent="Main_Content/Button_Offset/Buttons"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_gj7xl")
+text = "SETTINGS"
+
+[node name="ChangeMode" type="Button" parent="Main_Content/Button_Offset/Buttons"]
+layout_mode = 2
+size_flags_vertical = 8
+theme = ExtResource("2_gj7xl")
+text = "CHANGE MODE"
+
+[node name="Label" type="Label" parent="Main_Content/Button_Offset/Buttons"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_gj7xl")
+text = "MODE :
+"
+
+[node name="Continue_Menu" parent="Main_Content" instance=ExtResource("2_eu0t7")]
+visible = false
+layout_mode = 2
+Scene = ExtResource("4_bmxy5")
+
+[node name="newG_Menu" parent="Main_Content" instance=ExtResource("4_b1b3d")]
+visible = false
+layout_mode = 2
+Scene = ExtResource("4_bmxy5")
+
+[node name="settings_Menu" parent="Main_Content" instance=ExtResource("6_ucbwp")]
+visible = false
+layout_mode = 2
+
+[connection signal="continue_Menu_Opened" from="." to="Main_Content/Continue_Menu" method="_on_continue_menu_opened"]
+[connection signal="newG_Menu_Opened" from="." to="Main_Content/newG_Menu" method="_on_newG_menu_opened"]
+[connection signal="settings_Menu_Opened" from="." to="Main_Content/settings_Menu" method="_on_settings_menu_opened"]
+[connection signal="pressed" from="Main_Content/Button_Offset/Buttons/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="Main_Content/Button_Offset/Buttons/New_Game" to="." method="_on_new_game_pressed"]
+[connection signal="pressed" from="Main_Content/Button_Offset/Buttons/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Main_Content/Button_Offset/Buttons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Main_Content/Button_Offset/Buttons/ChangeMode" to="." method="_on_change_mode_pressed"]
+[connection signal="ContinueGame" from="Main_Content/Continue_Menu" to="." method="_on_continue_menu_continue_game"]
+[connection signal="CreateNewGame" from="Main_Content/newG_Menu" to="." method="_on_new_g_menu_create_new_game"]
