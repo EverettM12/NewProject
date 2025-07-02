@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://bricyp0ykvwf2"]
+
+[ext_resource type="Script" uid="uid://cdhlht7im17t" path="res://Affects/Scripts/delete_save_data.gd" id="1_adrqd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b4av5"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_adrqd"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_eh22o"]
+albedo_color = Color(0.239216, 0, 0, 1)
+
+[node name="Delete_save_data" type="Area3D"]
+script = ExtResource("1_adrqd")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.095, 0, 0, 0, 1.095, 0, 0, 0, 1.095, 0, 0, 0)
+shape = SubResource("BoxShape3D_b4av5")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("BoxMesh_adrqd")
+material = SubResource("StandardMaterial3D_eh22o")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://v3bb44ue4qrn"]
+
+[ext_resource type="Script" uid="uid://cdmeob7qb46yj" path="res://Affects/Scripts/heal_player.gd" id="1_yri2y"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f4575"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_yri2y"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0mwqw"]
+albedo_color = Color(0, 1, 0, 1)
+
+[node name="heal_player" type="Area3D"]
+script = ExtResource("1_yri2y")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.345, 0, 0, 0, 1.345, 0, 0, 0, 1.345, 0, 0, 0)
+shape = SubResource("BoxShape3D_f4575")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("BoxMesh_yri2y")
+material = SubResource("StandardMaterial3D_0mwqw")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

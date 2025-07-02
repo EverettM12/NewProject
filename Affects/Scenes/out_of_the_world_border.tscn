@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dfuhhg5lin6hg"]
+
+[ext_resource type="Script" uid="uid://bcjctdjy65i5q" path="res://Affects/Scripts/out_of_the_world_border.gd" id="1_45twv"]
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_d3vhc"]
+
+[node name="Out of the World Border" type="Area3D"]
+script = ExtResource("1_45twv")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("WorldBoundaryShape3D_d3vhc")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

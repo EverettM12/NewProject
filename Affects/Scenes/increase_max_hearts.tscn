@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://cytcpwvitoa5f"]
+
+[ext_resource type="Script" uid="uid://cruyjmenidjt1" path="res://Affects/Scripts/levelup_hearts.gd" id="1_ntta0"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_yb3lr"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_ntta0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ntta0"]
+albedo_color = Color(0, 0, 1, 1)
+
+[node name="MaxHeartsIncrease" type="Area3D"]
+script = ExtResource("1_ntta0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1.13, 0, 0, 0, 1.13, 0, 0, 0, 1.13, 0, 0, 0)
+shape = SubResource("BoxShape3D_yb3lr")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("BoxMesh_ntta0")
+material = SubResource("StandardMaterial3D_ntta0")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
