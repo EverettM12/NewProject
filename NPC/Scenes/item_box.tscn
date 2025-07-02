@@ -1,0 +1,48 @@
+[gd_scene load_steps=4 format=3 uid="uid://b8vyj58hg54ju"]
+
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="1_ho68l"]
+[ext_resource type="Script" uid="uid://p0mikl0nt8qo" path="res://NPC/Scripts/item_box.gd" id="1_p3rpf"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_p3rpf"]
+
+[node name="item_box" type="MarginContainer"]
+anchors_preset = -1
+anchor_left = 0.761285
+anchor_right = 1.0
+anchor_bottom = 0.0771605
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_bottom = 15
+script = ExtResource("1_p3rpf")
+metadata/_edit_use_anchors_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_p3rpf")
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ho68l")
+text = "TEST ITEM"
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_ho68l")
+text = "PURCHASE"
+
+[node name="MarginContainer" type="MarginContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 35
+
+[node name="Label2" type="Label" parent="HBoxContainer/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("1_ho68l")
+theme_override_font_sizes/font_size = 25
+text = "100"

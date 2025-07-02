@@ -1,0 +1,122 @@
+[gd_scene load_steps=13 format=3 uid="uid://dbadh4cf8jllo"]
+
+[ext_resource type="Script" uid="uid://c5ksu1h6sq3tt" path="res://Enemy/Scripts/enemy.gd" id="1_k5srr"]
+[ext_resource type="Resource" uid="uid://ts5mcarvwmxx" path="res://Enemy/Resources/enemy_resource.tres" id="2_x5hnn"]
+[ext_resource type="Shader" uid="uid://bynehyh1mrvkp" path="res://Shaders/CelShader.gdshader" id="3_di2ua"]
+[ext_resource type="Texture2D" uid="uid://dy3axqriremrj" path="res://Shaders/Textures/Gradient.png" id="4_e81u1"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_2ixmw"]
+radius = 3.01134
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_x5hnn"]
+radius = 0.845537
+height = 2.97065
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_k5srr"]
+radius = 0.435732
+height = 2.37896
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_k5srr"]
+radius = 5.92704
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_3dgdm"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_di2ua"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1tiod"]
+render_priority = 0
+shader = ExtResource("3_di2ua")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(1, 0, 0, 1)
+shader_parameter/color_gradient = ExtResource("4_e81u1")
+shader_parameter/fresnel_gradient = ExtResource("4_e81u1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u5va4"]
+render_priority = 0
+shader = ExtResource("3_di2ua")
+shader_parameter/point_size = 0.0
+shader_parameter/roughness = 0.0
+shader_parameter/metallic_texture_channel = Vector4(0, 0, 0, 0)
+shader_parameter/specular = 0.0
+shader_parameter/metallic = 0.0
+shader_parameter/normal_scale = 0.0
+shader_parameter/uv1_scale = Vector3(0, 0, 0)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/uv2_scale = Vector3(0, 0, 0)
+shader_parameter/uv2_offset = Vector3(0, 0, 0)
+shader_parameter/albedo = Color(1, 0.333333, 0, 1)
+shader_parameter/color_gradient = ExtResource("4_e81u1")
+shader_parameter/fresnel_gradient = ExtResource("4_e81u1")
+
+[node name="Enemy" type="CharacterBody3D" node_paths=PackedStringArray("detection_area", "disengage_timer", "disengage_timer_label", "navigation_agent") groups=["Enemy"]]
+script = ExtResource("1_k5srr")
+resource = ExtResource("2_x5hnn")
+detection_area = NodePath("PlayerDetection")
+disengage_timer = NodePath("Timers/DisengageTimer")
+disengage_timer_label = NodePath("Label3D")
+navigation_agent = NodePath("NavigationAgent3D")
+
+[node name="PlayerDetection" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PlayerDetection"]
+shape = SubResource("SphereShape3D_2ixmw")
+debug_color = Color(1, 0.6, 0, 0.419608)
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="DisengageTimer" type="Timer" parent="Timers"]
+wait_time = 5.0
+
+[node name="Label3D" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.31734, 0)
+billboard = 1
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="DamagePlayer" type="Area3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DamagePlayer"]
+shape = SubResource("CapsuleShape3D_x5hnn")
+debug_color = Color(0, 0.6, 0, 0.419608)
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="DamagePlayer"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.271334, 0, -1.11786)
+shape = SubResource("CapsuleShape3D_k5srr")
+debug_color = Color(0, 0.6, 0, 0.419608)
+
+[node name="OuterDetection" type="Area3D" parent="."]
+
+[node name="OuterDetection" type="CollisionShape3D" parent="OuterDetection"]
+shape = SubResource("SphereShape3D_k5srr")
+debug_color = Color(1, 0.2, 0.239216, 0.419608)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_3dgdm")
+
+[node name="CSGMesh3D" type="CSGMesh3D" parent="."]
+mesh = SubResource("CapsuleMesh_di2ua")
+material = SubResource("ShaderMaterial_1tiod")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="CSGMesh3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.346918, -0.2099)
+size = Vector3(0.385742, 1, 0.5802)
+material = SubResource("ShaderMaterial_u5va4")
+
+[node name="Label3D2" type="Label3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.90011, 0)
+billboard = 1
+
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detected"]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_player_not_detected"]
+[connection signal="timeout" from="Timers/DisengageTimer" to="." method="_on_disengage_timer_timeout"]
+[connection signal="body_entered" from="DamagePlayer" to="." method="_on_damage_player"]
+[connection signal="body_entered" from="OuterDetection" to="." method="_on_outer_detected"]

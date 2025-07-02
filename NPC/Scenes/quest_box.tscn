@@ -1,0 +1,115 @@
+[gd_scene load_steps=9 format=3 uid="uid://c3ogvvpyg652t"]
+
+[ext_resource type="Script" uid="uid://bm1nl71ns5x4x" path="res://NPC/Scripts/quest_box.gd" id="1_24me6"]
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="2_ege5m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hexox"]
+bg_color = Color(0, 0, 0, 0.398)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8fgu2"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 10
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+
+[sub_resource type="InputEventKey" id="InputEventKey_24me6"]
+device = -1
+pressed = true
+keycode = 89
+unicode = 121
+
+[sub_resource type="Shortcut" id="Shortcut_ege5m"]
+events = [SubResource("InputEventKey_24me6")]
+
+[sub_resource type="InputEventKey" id="InputEventKey_htph5"]
+device = -1
+pressed = true
+keycode = 78
+unicode = 110
+
+[sub_resource type="Shortcut" id="Shortcut_5va18"]
+events = [SubResource("InputEventKey_htph5")]
+
+[node name="QuestBox" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_24me6")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 343.0
+offset_top = 490.0
+offset_right = -343.0
+offset_bottom = -20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_hexox")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = 15.0
+offset_right = -40.0
+offset_bottom = -47.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="QuestText" type="RichTextLabel" parent="MarginContainer/Panel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="MarginContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 377.0
+offset_top = 92.0
+offset_right = -20.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer2"]
+layout_mode = 2
+
+[node name="AcceptButton" type="Button" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_ege5m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fgu2")
+shortcut = SubResource("Shortcut_ege5m")
+text = "ACCEPT"
+
+[node name="DeclineButton" type="Button" parent="MarginContainer/Panel/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_ege5m")
+theme_override_styles/normal = SubResource("StyleBoxFlat_8fgu2")
+shortcut = SubResource("Shortcut_5va18")
+text = "DECLINE"
+
+[node name="NameLabel" type="Label" parent="MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+theme = ExtResource("2_ege5m")

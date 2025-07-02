@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=4 format=3 uid="uid://doi0bcqxbb2i7"]
+
+[ext_resource type="Script" uid="uid://c0vgmwo81fs27" path="res://NPC/Scripts/ItemData.gd" id="1_3v5v5"]
+[ext_resource type="Resource" uid="uid://d02q4o0ghet87" path="res://Assets/ItemAsset/Items/Apple.tres" id="1_8xasj"]
+[ext_resource type="Texture2D" uid="uid://bp6emkjkdr3eh" path="res://Assets/ItemAsset/Items/Textures/apple.png" id="2_64e44"]
+
+[resource]
+script = ExtResource("1_3v5v5")
+name = "APPLE"
+desc = "A red fruit"
+cost = 5
+texture = ExtResource("2_64e44")
+item_given_on_purchase = ExtResource("1_8xasj")
+metadata/_custom_type_script = "uid://c0vgmwo81fs27"

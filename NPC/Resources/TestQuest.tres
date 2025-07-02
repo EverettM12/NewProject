@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="QuestData" load_steps=4 format=3 uid="uid://d0p0nk8484sbq"]
+
+[ext_resource type="Resource" uid="uid://2b2pqs76crvu" path="res://Assets/ItemAsset/Items/Key.tres" id="1_b06d6"]
+[ext_resource type="Script" uid="uid://chpbpbcj018jy" path="res://NPC/Scripts/QuestData.gd" id="1_k2o50"]
+[ext_resource type="Resource" uid="uid://d02q4o0ghet87" path="res://Assets/ItemAsset/Items/Apple.tres" id="1_qhdpg"]
+
+[resource]
+script = ExtResource("1_k2o50")
+quest_name = "Big Bill's Quest"
+quest_description = "Bill needs an apple."
+required_item = ExtResource("1_qhdpg")
+required_item_quantity = 1
+gives_item = ExtResource("1_b06d6")
+gives_item_quantity = 1
+quest_type = 1
+metadata/_custom_type_script = "uid://chpbpbcj018jy"

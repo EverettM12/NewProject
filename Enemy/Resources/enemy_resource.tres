@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=2 format=3 uid="uid://ts5mcarvwmxx"]
+
+[ext_resource type="Script" uid="uid://owrmdgfwtfpc" path="res://Enemy/Scripts/enemy_script_resource.gd" id="1_iigbd"]
+
+[resource]
+script = ExtResource("1_iigbd")
+REGULAR_MOVE_SPEED = 4.0
+FAST_MOVE_SPEED = 6.0
+SLOW_MOVE_SPEED = 2.0
+REGULAR_ATTACK_RANGE = 2.5
+SHORTER_ATTACK_RANGE = 1.0
+LONGER_ATTACK_RANGE = 6.0
+PATROL_REACHED_THRESHOLD = 2.0
+speed_options = null
+metadata/_custom_type_script = "uid://owrmdgfwtfpc"

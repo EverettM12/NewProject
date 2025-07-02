@@ -1,0 +1,105 @@
+[gd_scene load_steps=4 format=3 uid="uid://b20kibjeyts16"]
+
+[ext_resource type="Script" uid="uid://low4273bmary" path="res://NPC/Scripts/shop_box.gd" id="1_u8ghu"]
+[ext_resource type="Theme" uid="uid://bbye1mcwe5h62" path="res://Fonts/DefaultThemetres.tres" id="2_rs0rx"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_0ati3"]
+
+[node name="shop_box" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_u8ghu")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.719618
+anchor_top = 0.0277778
+anchor_right = 0.981771
+anchor_bottom = 0.569444
+offset_bottom = 3.05176e-05
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="MainContent" type="Panel" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="Main" type="MarginContainer" parent="MarginContainer/MainContent"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 10
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/MainContent/Main"]
+layout_mode = 2
+
+[node name="ItemHolder" type="VBoxContainer" parent="MarginContainer/MainContent/Main/ScrollContainer"]
+layout_mode = 2
+
+[node name="MoreInfo" type="MarginContainer" parent="MarginContainer/MainContent"]
+visible = false
+layout_mode = 0
+anchor_left = -0.706949
+anchor_right = -0.0664653
+anchor_bottom = 0.663818
+offset_left = -1.52588e-05
+offset_right = -2.09808e-05
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="MarginContainer/MainContent/MoreInfo"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/MainContent/MoreInfo/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/MainContent/MoreInfo/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/MainContent/MoreInfo/Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("2_rs0rx")
+theme_override_font_sizes/font_size = 35
+text = "TEST ITEM"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/MainContent/MoreInfo/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/MainContent/MoreInfo/Panel/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = SubResource("PlaceholderTexture2D_0ati3")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="MarginContainer/MainContent/MoreInfo/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="MarginContainer/MainContent/MoreInfo/Panel/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+size_flags_horizontal = 6
+theme = ExtResource("2_rs0rx")
+theme_override_font_sizes/font_size = 35
+text = "100"
